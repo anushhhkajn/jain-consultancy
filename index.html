@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jain Consultancy Services | Health Insurance Advisory</title>
+<meta name="description" content="Jain Consultancy Services helps Indian families choose the right health insurance plan. Cashless hospitalisation, family floater options, zero hidden surprises. Call +91 9079872371.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0B2545;
+    --navy-mid: #1B3F72;
+    --gold: #C9952A;
+    --gold-light: #F5E6C8;
+    --cream: #FDFAF4;
+    --warm-white: #FFFEF9;
+    --text-dark: #1A1A2E;
+    --text-mid: #4A5568;
+    --text-light: #718096;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    padding: 0.55rem 1.4rem;
+    border-radius: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #a87820; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1a4a8a 100%);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,149,42,0.15);
+    top: -150px; right: -150px;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,149,42,0.1);
+    bottom: -100px; left: -100px;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(201,149,42,0.2);
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 30px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(201,149,42,0.3);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #fff;
+    line-height: 1.25;
+    max-width: 700px;
+    margin: 0 auto 1.25rem;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #a87820; transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: border-color 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.8); }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--warm-white);
+    border-bottom: 1px solid #e8e0d0;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+  }
+  .trust-icon {
+    width: 20px; height: 20px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* SECTIONS */
+  .section { padding: 4rem 2rem; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 1.25rem;
+  }
+
+  /* STORY */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  @media (max-width: 640px) { .story-grid { grid-template-columns: 1fr; } }
+  .story-text p {
+    color: var(--text-mid);
+    margin-bottom: 1rem;
+    font-size: 0.975rem;
+    line-height: 1.75;
+  }
+  .story-text p strong { color: var(--navy); font-weight: 500; }
+  .story-card {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .story-card::before {
+    content: '\201C';
+    position: absolute;
+    top: -10px; left: 16px;
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: rgba(201,149,42,0.15);
+    line-height: 1;
+  }
+  .story-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+  .story-attr { color: var(--gold); font-size: 0.85rem; font-weight: 500; }
+
+  /* SERVICES */
+  .services-bg { background: var(--warm-white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .service-card {
+    background: #fff;
+    border: 1px solid #e8e0d0;
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .service-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .service-icon {
+    width: 44px; height: 44px;
+    background: var(--gold-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .service-icon svg { width: 22px; height: 22px; }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .service-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+  /* WHY */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .why-card {
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    background: #fff;
+    border-radius: 0 10px 10px 0;
+  }
+  .why-card h4 { font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.975rem; }
+  .why-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+  /* PLANS */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .plan-card {
+    background: #fff;
+    border: 1px solid #e8e0d0;
+    border-radius: 14px;
+    padding: 1.75rem;
+    text-align: center;
+    position: relative;
+  }
+  .plan-card.featured { border: 2px solid var(--gold); }
+  .plan-badge {
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 3px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .plan-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.75rem; }
+  .plan-card ul { list-style: none; text-align: left; margin-bottom: 1.25rem; }
+  .plan-card ul li {
+    font-size: 0.85rem; color: var(--text-mid);
+    padding: 0.3rem 0;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .plan-card ul li::before { content: '✓'; color: var(--gold); font-weight: 600; }
+  .plan-btn {
+    display: block;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 25px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .plan-btn:hover { background: var(--navy-mid); }
+  .plan-card.featured .plan-btn { background: var(--gold); }
+  .plan-card.featured .plan-btn:hover { background: #a87820; }
+
+  /* TESTIMONIALS */
+  .testimonial-bg { background: var(--navy); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  .testimonial-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 1.75rem;
+  }
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+  .testimonial-card p { color: rgba(255,255,255,0.82); font-size: 0.9rem; line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+  .t-name { color: var(--gold); font-size: 0.85rem; font-weight: 500; }
+  .t-sub { color: rgba(255,255,255,0.45); font-size: 0.8rem; }
+  .section-title.light { color: #fff; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--gold-light);
+    border-top: 1px solid #e0c990;
+    border-bottom: 1px solid #e0c990;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .cta-section p { color: var(--text-mid); max-width: 520px; margin: 0 auto 2rem; font-size: 0.975rem; }
+  .phone-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--navy);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: background 0.2s;
+    margin-bottom: 1rem;
+  }
+  .phone-cta:hover { background: var(--navy-mid); }
+  .cta-note { color: var(--text-light); font-size: 0.8rem; }
+
+  /* WHATSAPP FLOAT */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    background: #25D366;
+    color: #fff;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    z-index: 999;
+    font-size: 1.6rem;
+    transition: transform 0.2s;
+  }
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  footer {
+    background: var(--navy);
+    padding: 2rem;
+    text-align: center;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.82rem;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919079872371" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">💬</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Jain <span>Consultancy</span></div>
+  <a href="tel:+919079872371" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Health Insurance Advisory · India</div>
+  <h1>Your health is priceless.<br><em>Your plan should reflect that.</em></h1>
+  <p class="hero-sub">We help Indian families choose the right health insurance — not just any plan — before life makes that decision for you.</p>
+  <div class="hero-btns">
+    <a href="tel:+919079872371" class="btn-primary">📞 Call +91 90798 72371</a>
+    <a href="#services" class="btn-secondary">Explore Plans</a>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M2 6.5l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    Cashless Hospitalisation
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M2 6.5l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    Family Floater Options
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M2 6.5l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    Zero Hidden Surprises
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">
+      <svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M2 6.5l3 3 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    Personalised Guidance
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Why Jain Consultancy exists</h2>
+        <p>Most people don't think about health insurance — until the hospital bill arrives. And by then, <strong>it's too late.</strong></p>
+        <p>We have seen it happen more times than we can count. The regret in someone's eyes when they realise that one decision — one they kept putting off — has now cost them everything they saved.</p>
+        <p><strong>That moment is what drives us.</strong> Jain Consultancy was built so that you never have to sit in a hospital room, wishing you had planned sooner.</p>
+        <p>Because the best time to understand your health insurance is <strong>before you ever need it.</strong></p>
+      </div>
+      <div class="story-card">
+        <p class="story-quote">"The best time to understand your health insurance is before you ever need it. One call can protect your entire family."</p>
+        <div class="story-attr">— Jain Consultancy Services</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Health protection, made simple</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9952A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Individual Health Cover</h3>
+        <p>Tailored plans for salaried & self-employed individuals with the right sum insured for your lifestyle.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9952A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Family Floater Plans</h3>
+        <p>Cover your entire family under one plan. One call protects every person you love at an affordable premium.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9952A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h3>Cashless Hospitalisation</h3>
+        <p>Access 10,000+ network hospitals. No upfront payments — just show your card and focus on recovery.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9952A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>Policy Review & Advisory</h3>
+        <p>Already have a policy? We audit it for gaps, hidden clauses, and exclusions you might not know about.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9952A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Claim Assistance</h3>
+        <p>When the time comes, we walk you through every step of your claim — paperwork, follow-ups, settlement.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9952A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Top-Up & Super Top-Up</h3>
+        <p>Boost your existing coverage affordably. Smart add-ons that kick in when your base cover runs out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="section">
+  <div class="container">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">We find the RIGHT plan, not just any plan</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>Independent Advice</h4>
+        <p>We are not tied to one insurer. We compare across leading insurers to find what genuinely fits your needs.</p>
+      </div>
+      <div class="why-card">
+        <h4>No Jargon, No Surprises</h4>
+        <p>We explain every clause in plain language so you know exactly what you are — and are not — covered for.</p>
+      </div>
+      <div class="why-card">
+        <h4>Long-Term Relationship</h4>
+        <p>We stay with you year after year — renewals, upgrades, and claims — not just at the point of sale.</p>
+      </div>
+      <div class="why-card">
+        <h4>Fast, Responsive Support</h4>
+        <p>One call or message is all it takes. We are reachable when you need us, especially in a medical emergency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="section services-bg" id="plans">
+  <div class="container">
+    <div class="section-label">Popular Choices</div>
+    <h2 class="section-title">Plans we commonly recommend</h2>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <h3>Individual Plan</h3>
+        <ul>
+          <li>₹5L – ₹1Cr cover options</li>
+          <li>Day-care procedures covered</li>
+          <li>Pre & post hospitalisation</li>
+          <li>No-claim bonus benefit</li>
+        </ul>
+        <a href="tel:+919079872371" class="plan-btn">Get a quote</a>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">Most Popular</div>
+        <h3>Family Floater</h3>
+        <ul>
+          <li>Entire family, one premium</li>
+          <li>Cashless at 10,000+ hospitals</li>
+          <li>Maternity add-on available</li>
+          <li>Annual health check-up</li>
+        </ul>
+        <a href="tel:+919079872371" class="plan-btn">Get a quote</a>
+      </div>
+      <div class="plan-card">
+        <h3>Senior Citizen</h3>
+        <ul>
+          <li>Coverage for ages 60–80+</li>
+          <li>Pre-existing conditions covered</li>
+          <li>Domiciliary hospitalisation</li>
+          <li>Critical illness add-on</li>
+        </ul>
+        <a href="tel:+919079872371" class="plan-btn">Get a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonial-bg">
+  <div class="container">
+    <div class="section-label" style="color: var(--gold);">What Families Say</div>
+    <h2 class="section-title light">Trusted by families across India</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"We never understood health insurance until Jain Consultancy sat us down and explained everything simply. Now our whole family is covered with zero stress."</p>
+        <div class="t-name">Ramesh & Sunita Sharma</div>
+        <div class="t-sub">Jaipur, Rajasthan</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"When my father was hospitalised, the cashless process was seamless. Not a single rupee out of pocket. I am so grateful we planned ahead."</p>
+        <div class="t-name">Priya Agarwal</div>
+        <div class="t-sub">Jaipur, Rajasthan</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"They reviewed my old policy and found major gaps I didn't even know existed. Switched to a better plan within two days. Highly recommend."</p>
+        <div class="t-name">Vikas Mehta</div>
+        <div class="t-sub">Jaipur, Rajasthan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="section-label">Get Protected Today</div>
+    <h2 class="section-title">Don't wait for the hospital bill to arrive</h2>
+    <p>One conversation is all it takes. Let us find the right plan for your family — before life makes that decision for you.</p>
+    <a href="tel:+919079872371" class="phone-cta">📞 +91 90798 72371</a>
+    <br>
+    <span class="cta-note">Free consultation · No obligations · Available Mon–Sat, 9am–7pm</span>
+  </div>
+</section>
+
+<footer>
+  <strong>Jain Consultancy Services</strong> · Jaipur, Rajasthan, India<br>
+  <span>+91 90798 72371 · Health Insurance Advisory</span>
+</footer>
+
+</body>
+</html>
